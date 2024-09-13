@@ -33,6 +33,6 @@ func main() {
 	})
 
 	serverPort := os.Getenv("SERVER_PORT")
-	log.Println("сервер запущен на порту:", serverPort)
+	log.Println("сервер запущен, порт:", serverPort)
 	router.Run(":" + serverPort)
 }

@@ -94,7 +94,7 @@ func GetTokens(db *gorm.DB, c *gin.Context) {
 
 	c.JSON(http.StatusOK, gin.H{
 		"access_token":  accessToken,
-		"refresh_token": base64.StdEncoding.EncodeToString([]byte(refreshToken)), // Возвращаем Refresh токен в base64 формате
+		"refresh_token": base64.StdEncoding.EncodeToString([]byte(refreshToken)),
 	})
 }
 

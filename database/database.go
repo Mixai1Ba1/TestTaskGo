@@ -17,7 +17,7 @@ func GetDb() (*gorm.DB, error) {
 	dbName := os.Getenv("POSTGRES_DB")
 	dbPassword := os.Getenv("POSTGRES_PASSWORD")
 	dbSSLMode := "disable"
-	dbTimeZone := "Asia/Shanghai"
+	dbTimeZone := "Europe/Moscow"
 
 	dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=%s TimeZone=%s",
 		dbHost, dbUser, dbPassword, dbName, dbPort, dbSSLMode, dbTimeZone)

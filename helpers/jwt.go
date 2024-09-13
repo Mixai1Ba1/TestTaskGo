@@ -22,9 +22,10 @@ func GenerateTokens(user *models.User, clientIP string) (string, string, error) 
 		GUID: user.GUID,
 		IP:   clientIP,
 		StandardClaims: jwt.StandardClaims{
-			ExpiresAt: time.Now().Add(15 * time.Hour).Unix(), // access исчезает через 15 минут
+			ExpiresAt: time.Now().Add(15 * time.Hour).Unix(), // access исчезает через 15 часов
 		},
 	})
+
 	accessSecret := []byte(os.Getenv("ACCESS_SECRET"))
 	accessTokenString, err := accessToken.SignedString([]byte(accessSecret))
 	if err != nil {
